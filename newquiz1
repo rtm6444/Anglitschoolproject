@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepositions Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .explanation {
+            display: none;
+            color: green;
+            margin-top: 10px;
+        }
+
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="question" data-answer="at">
+        1. Meet me ___ the bus stop.
+        <br>
+        <button onclick="checkAnswer(this)">on</button>
+        <button onclick="checkAnswer(this)">in</button>
+        <button onclick="checkAnswer(this)">at</button>
+        <div class="explanation">Correct! We use 'at' for specific points. 'At the bus stop' means you are standing or waiting at that specific location.</div>
+    </div>
+
+    <div class="question" data-answer="in">
+        2. The cookies are ___ the jar.
+        <br>
+        <button onclick="checkAnswer(this)">on</button>
+        <button onclick="checkAnswer(this)">in</button>
+        <button onclick="checkAnswer(this)">at</button>
+        <div class="explanation">Correct! We use 'in' for enclosed spaces. So, 'in the jar' means the cookies are inside the jar.</div>
+    </div>
+
+    <div class="question" data-answer="on">
+        3. The book is ___ the shelf.
+        <br>
+        <button onclick="checkAnswer(this)">on</button>
+        <button onclick="checkAnswer(this)">in</button>
+        <button onclick="checkAnswer(this)">at</button>
+        <div class="explanation">Correct! We use 'on' for surfaces. So, 'on the shelf' means the book is resting on the surface of the shelf.</div>
+    </div>
+
+    <div class="question" data-answer="in">
+        4. She lives ___ France.
+        <br>
+        <button onclick="checkAnswer(this)">on</button>
+        <button onclick="checkAnswer(this)">in</button>
+        <button onclick="checkAnswer(this)">at</button>
+        <div class="explanation">Correct! We use 'in' for countries or larger geographic areas. So, 'in France' means she lives within the boundaries of France.</div>
+    </div>
+
+    <div class="question" data-answer="at">
+        5. The conference is held ___ the main hall.
+        <br>
+        <button onclick="checkAnswer(this)">on</button>
+        <button onclick="checkAnswer(this)">in</button>
+        <button onclick="checkAnswer(this)">at</button>
+        <div class="explanation">Correct! We use 'at' for specific locations or venues. 'At the main hall' indicates a specific location where the conference is taking place.</div>
+    </div>
+
+    <script>
+        function checkAnswer(button) {
+            const questionDiv = button.parentElement;
+            const explanationDiv = questionDiv.querySelector('.explanation');
+            const correctAnswer = questionDiv.getAttribute('data-answer');
+
+            if (button.innerText === correctAnswer) {
+                explanationDiv.style.display = 'block';
+                explanationDiv.textContent = explanationDiv.textContent.replace('Correct!', '');
+                button.style.backgroundColor = 'green';
+                button.style.color = 'white';
+            } else {
+                button.classList.add('incorrect');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
