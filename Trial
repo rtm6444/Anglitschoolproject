@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepositions Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .explanation {
+            display: none;
+            color: green;
+            margin-top: 10px;
+        }
+
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="question" data-answer="in">
+        1. She is ___ the library.
+        <br>
+        <button onclick="checkAnswer(this)">on</button>
+        <button onclick="checkAnswer(this)">in</button>
+        <button onclick="checkAnswer(this)">at</button>
+        <div class="explanation">Correct! We use 'in' for enclosed spaces. So, 'in the library' means she is inside the library.</div>
+    </div>
+
+    <div class="question" data-answer="on">
+        2. The cat is sitting ___ the mat.
+        <br>
+        <button onclick="checkAnswer(this)">on</button>
+        <button onclick="checkAnswer(this)">in</button>
+        <button onclick="checkAnswer(this)">at</button>
+        <div class="explanation">Correct! We use 'on' for surfaces. So, 'on the mat' means the cat is sitting on top of the mat.</div>
+    </div>
+
+    <!-- You can add more questions similarly -->
+
+    <script>
+        function checkAnswer(button) {
+            const questionDiv = button.parentElement;
+            const explanationDiv = questionDiv.querySelector('.explanation');
+            const correctAnswer = questionDiv.getAttribute('data-answer');
+
+            if (button.innerText === correctAnswer) {
+                explanationDiv.style.display = 'block';
+                explanationDiv.textContent = explanationDiv.textContent.replace('Correct!', '');
+                button.style.backgroundColor = 'green';
+                button.style.color = 'white';
+            } else {
+                button.classList.add('incorrect');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
